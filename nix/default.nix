@@ -9,7 +9,10 @@ stdenv.mkDerivation {
   pname = "hyprland-protocols";
   inherit version;
 
-  src = ../.;
+  src = builtins.path {
+    path = ../.;
+    name = "source";
+  };
 
   nativeBuildInputs = [meson ninja];
 
